@@ -214,10 +214,10 @@ export default function Chat() {
   };
 
   return (
-    <div className="flex flex-col h-screen max-w-3xl mx-auto bg-[#121212] text-gray-200 shadow-2xl relative md:border-x md:border-gray-800">
+    <div className="flex flex-col h-[100dvh] w-full max-w-3xl mx-auto bg-[#121212] text-gray-200 shadow-2xl relative md:border-x md:border-gray-800">
       
       {/* 헤더 */}
-      <header className="py-4 px-5 bg-[#121212] bg-opacity-90 backdrop-blur-md sticky top-0 z-20 flex items-center justify-between border-b border-gray-800">
+      <header className="py-4 px-5 bg-[#121212] bg-opacity-90 backdrop-blur-md sticky top-0 z-20 flex items-center justify-between border-b border-gray-800 relative">
         <div className="flex items-center">
           <div className="w-9 h-9 bg-gray-800 rounded-xl flex items-center justify-center text-xl shadow-inner mr-3 border border-gray-700">🤖</div>
           <div>
@@ -237,11 +237,14 @@ export default function Chat() {
       </header>
 
       {/* 채팅창 */}
-      <div className="flex-1 overflow-y-auto px-4 py-6 space-y-6 scrollbar-hide">
+      <div className="flex-1 min-h-0 overflow-y-auto px-4 py-5 space-y-6 scrollbar-hide bg-[#121212]">
         {messages.length === 0 ? (
-          <div className="flex flex-col items-center justify-center h-full opacity-60">
-            <div className="text-5xl mb-4">🔊</div>
-            <p className="text-sm bg-gray-800/50 px-5 py-2.5 rounded-full border border-gray-800 text-center leading-relaxed">
+          <div className="flex flex-col items-center justify-center h-full opacity-60 px-4">
+            {/* 투박한 볼륨 아이콘 대신 세련된 AI 대형 아이콘으로 변경 */}
+            <div className="w-28 h-28 rounded-full bg-gray-800/50 flex items-center justify-center text-7xl mb-6 border border-gray-700 shadow-2xl">
+              🤖
+            </div>
+            <p className="text-sm bg-gray-800/50 px-5 py-2.5 rounded-full border border-gray-800 text-center leading-relaxed break-keep">
               안녕하세요! 무엇을 도와드릴까요?
             </p>
           </div>
@@ -349,7 +352,7 @@ export default function Chat() {
           </button>
 
           <input
-            className="flex-1 bg-gray-800 text-white placeholder-gray-500 p-3.5 px-4 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-700 shadow-inner"
+            className="flex-1 w-full min-w-0 bg-gray-800 text-white placeholder-gray-500 py-3 px-4 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-700 text-base"
             value={inputValue}
             placeholder={
               isListening ? "말씀해 주세요..." :
