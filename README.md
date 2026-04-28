@@ -1,4 +1,4 @@
-# 🤖 Gemini Voice & Vision Assistant
+# 🤖 Gemini Assistant
 
 Next.js와 Google Gemini API를 활용하여 구축한 **멀티모달(Multimodal) AI 챗봇**입니다. 
 텍스트 대화를 넘어 **사진 분석(Vision), 음성 인식(STT), 음성 출력(TTS)** 기능을 통합하여 실제 AI 비서와 대화하는 듯한 직관적이고 풍부한 사용자 경험을 제공합니다.
